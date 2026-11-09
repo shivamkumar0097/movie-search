@@ -20,8 +20,10 @@
 
 ---
 
+## 🔀 Application Flow
+
+```mermaid
 flowchart TD
-```
     A([Start]) --> B[Open Movie Search App]
     B --> C[Enter Movie Name]
     C --> D[React Handles Search]
