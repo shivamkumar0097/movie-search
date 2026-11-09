@@ -20,6 +20,31 @@
 
 ---
 
+flowchart TD
+    A([Start]) --> B[Open Movie Search App]
+    B --> C[Enter Movie Name]
+    C --> D[React Handles Search]
+    D --> E[Fetch Data from OMDb API]
+    E --> F{API Response}
+
+    F -->|Success| G[Get Movie Results]
+    F -->|No Results| H[Show No Results Message]
+    F -->|API Error| I[Show Error Message]
+
+    G --> J[Display Movie Poster Grid]
+    J --> K[Select a Movie]
+    K --> L[Fetch Movie Details]
+    L --> M[Show Details Popup]
+
+    M --> N{Load More?}
+    N -->|Yes| O[Fetch Next Page]
+    O --> J
+    N -->|No| P([End])
+
+    H --> P
+    I --> P
+
+--- 
 ## ✨ Features
 
 | | |
